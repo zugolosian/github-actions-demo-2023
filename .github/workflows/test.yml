@@ -1,0 +1,16 @@
+name: Github Demo
+on:
+  pull_request
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v3
+        name: GrabMyCode
+      - uses: rojopolis/spellcheck-github-actions@v0
+        name: Spellcheck
+        with:
+          source_files: README.md
+          task_name: Markdown
+      
